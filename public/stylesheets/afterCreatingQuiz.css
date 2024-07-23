@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.card {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 1.5rem;
+    border-radius: 10px;
+    background-color: #fafafa;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: slideIn 1s ease-in-out;
+}
+
+h1 {
+    color: #333;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+h2.code {
+    color: #ff6347;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    background: #ffe4e1;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+h3 {
+    color: #555;
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+a {
+    display: inline-block;
+    margin: 0.5rem 0;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+a:hover {
+    background: #0056b3;
+}
+
+.create-link {
+    background: #28a745;
+}
+
+.create-link:hover {
+    background: #218838;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -1,0 +1,83 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to right, #83a4d4, #b6fbff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    padding: 20px 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    animation: fadeIn 1s ease-in-out;
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 2em;
+}
+
+.question {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.question-text {
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.options {
+    margin-bottom: 10px;
+}
+
+.option {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+
+.buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+button {
+    background: #83a4d4;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-size: 1em;
+}
+
+button:hover {
+    background: #6699cc;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

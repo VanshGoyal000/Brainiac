@@ -1,13 +1,38 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to Brainiac</p>
-    <h2><a href="/users/signup">Signup</a></h2>
-    <h2><a href="/users/login">Login</a></h2>
-  </body>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Brainiac</h1>
+            <nav>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/users/signup">Signup</a></li>
+                    <li><a href="/users/login">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h1><%= title %></h1>
+            <p>Welcome to Brainiac</p>
+            <div class="links">
+                <a href="/users/signup" class="btn">Signup</a>
+                <a href="/users/login" class="btn">Login</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Brainiac. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
 </html>

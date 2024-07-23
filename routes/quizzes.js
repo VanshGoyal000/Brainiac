@@ -24,19 +24,22 @@ router.get('/create',isLoggedIn ,  (req, res) => {
 router.post('/create', isLoggedIn, async (req, res) => {
     try {
         const { title, questions } = req.body;
-        console.log('Title:', title);
-        console.log('Questions:', questions);
-        const code = crypto.randomBytes(3).toString('hex'); // Generate a unique code
-        console
+        const code = crypto.randomBytes(3).toString('hex');
         const quiz = new Quiz({ title, questions, code, creator: req.user._id });
         await quiz.save();
-        console.log('Quiz created successfully:', quiz);
-        res.redirect(`/quizzes/${quiz._id}`);
+        res.redirect(`/quizzes/sharehere?code=${code}&id=${quiz._id}`);
     } catch (error) {
         console.error('Error creating quiz:', error);
         res.render('createQuiz', { error: 'An error occurred while creating the quiz.' });
     }
 });
+
+// after creating quiz
+router.get('/sharehere', async (req, res) => {
+    const {code , id} = req.query;
+    console.log('share' , code)
+    res.render('afterCreatingQuiz' , {code , id})
+})
 
 // Join a quiz
 router.get('/join', isLoggedIn , (req, res) => {
