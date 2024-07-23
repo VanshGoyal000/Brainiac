@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Leaderboard - <%= quiz.title %></title>
+</head>
+<body>
+    <h1>Leaderboard - <%= quiz.title %></h1>
+    <table>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% quiz.scores.forEach(score => { %>
+                <tr>
+                    <td><%= score.user.username %></td>
+                    <td><%= score.score %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+</body>
+</html>

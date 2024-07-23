@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Join Quiz</title>
+</head>
+<body>
+    <h1>Join Quiz</h1>
+    <% if (typeof error !== 'undefined') { %>
+        <p style="color: red;"><%= error %></p>
+    <% } %>
+    <form action="/quizzes/join" method="POST">
+        <label for="code">Quiz Code:</label>
+        <input type="text" name="code" required>
+        <button type="submit">Join Quiz</button>
+    </form>
+</body>
+</html>
