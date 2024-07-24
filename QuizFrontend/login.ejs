@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="/stylesheets/auth.css">
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form action="/users/login" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" name="email" required>
+                <br>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" required>
+            </div>
+            <br>
+            <br>
+            <br>
+            <button type="submit" class="btn">Login</button>
+        </form>
+        <p>Don't have an account? <a href="/users/signup">Sign up</a></p>
+    </div>
+</body>
+</html>

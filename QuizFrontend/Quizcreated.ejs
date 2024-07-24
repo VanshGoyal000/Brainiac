@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Created</title>
+    <link rel="stylesheet" href="/stylesheets/afterCreatingQuiz.css">
+    <link rel="stylesheet" href="Quizcreated.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Share this quiz</h1>
+            <!-- <h2 class="code"><%= code %></h2> -->
+            <h3>Here is the link to share</h3>
+            <a href="http://localhost:3000/quizzes/<%= id %>" class="link">Link to share</a>
+
+            <h3>Click here to join</h3>
+            <a href="http://localhost:3000/quizzes/join" class="join-link">Join Quiz</a>
+            <br>
+            <h3>Create another quiz?</h3>
+            <a href="http://localhost:3000/quizzes/create" class="create-link">Create another quiz</a>
+        </div>
+    </div>
+</body>
+</html>

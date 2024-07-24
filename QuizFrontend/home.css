@@ -1,0 +1,191 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+AR:wght@100..400&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+
+body {
+    font-family: "Kanit", sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: url("https://cdn.pixabay.com/photo/2022/02/02/17/14/art-6988950_1280.jpg"); */
+    background-color: lavender;
+    overflow: hidden;
+}
+
+.navbar {
+    background-color: lightgrey;
+    color: #fff;
+    padding: 10px 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(126, 33, 126);
+    font-family: "Playwrite HR Lijeva", cursive;
+}
+
+.navbar nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #575757;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.intro{
+    text-align: center;
+    padding: 50px;
+    padding-top: 100px;
+    height: 50vh;
+    width: 25vw;
+    font-size: 20px;
+    display:inline-block;
+    position: relative;
+    left: 800px;
+    bottom: 900px;
+}
+
+.intro p {
+    font-size: 30px;
+    color: #666;
+}
+
+.links {
+    margin-top: 20px;
+}
+
+.links .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.links .btn:hover {
+    background-color: #575757;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.logo {
+    color: rgb(126, 33, 126);
+    font-family: "Playwrite HR Lijeva", cursive;
+    font-weight:800;
+}
+span{
+    font-size: 30px;
+    color:  rgb(126, 33, 126);
+}
+
+.box2 {
+    width: 35vw;
+    height: 55vh;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+    top: 30px;
+    left: 120px;
+    text-align: center;
+    font-size: 30px;
+}
+.card1{
+    border: 1px solid #4f1b41;
+    background-color: #4f1b41;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card2{
+    border: 1px solid #692457;
+    background-color: #692457;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card3{
+    border: 1px solid #842e6d;
+    background-color: #842e6d;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card4{
+    border: 1px solid #9e3783;
+    background-color: #9e3783;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card5{
+    border: 1px solid #b94099;
+    background-color: #b94099;
+    color: white;
+    width: 300px;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card6{
+    border: 1px solid #c558a8;
+    background-color: #c558a8;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+img{
+    position: relative;
+    left: 500px;
+    bottom: 399px;
+}
