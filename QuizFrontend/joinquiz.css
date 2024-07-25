@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+AR:wght@100..400&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+
+body {
+    font-family: "Kanit", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 30vw;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 50px;
+    position: relative;
+    top: 100px;
+
+}
+
+h1 {
+    text-align: center;
+    color: rgb(126, 33, 126);
+    font-family: "Playwrite HR Lijeva", cursive;
+    font-size: 40px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-right: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.buttons {
+    text-align: center;
+}
+
+.buttons button {
+    padding: 10px 20px;
+    background-color: rgb(126, 33, 126);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family: "Kanit", sans-serif;
+    font-size: 17px;
+}
+
+.buttons button:hover {
+    background-color: blueviolet;
+}
+
+.error {
+    color: red;
+    text-align: center;
+    margin-bottom: 15px;
+}

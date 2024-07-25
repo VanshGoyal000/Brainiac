@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Quiz</title>
+    <link rel="stylesheet" href="/stylesheets/joinQuiz.css">
+    <link rel="stylesheet" href="joinquiz.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Join Quiz</h1>
+        <!-- edit later -->
+        <!-- <% if (typeof error !== 'undefined') { %> -->
+            <!-- <p class="error"><%= error %></p> -->
+        <!-- <% } %> -->
+        <form action="/quizzes/join" method="POST">
+            <div class="form-group">
+                <label for="code">Quiz Code:</label>
+                <input type="text" name="code" required>
+            </div>
+            <div class="buttons">
+                <button type="submit">Join Quiz</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
