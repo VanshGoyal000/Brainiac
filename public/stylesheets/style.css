@@ -1,145 +1,205 @@
-/* General styles */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+AR:wght@100..400&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
+    font-family: "Kanit", sans-serif;
+    margin: 0;
+    padding: 0;
+    /* background-image: url("https://cdn.pixabay.com/photo/2022/02/02/17/14/art-6988950_1280.jpg"); */
+    background-color: lavender;
+    overflow: hidden;
 }
 
-.container {
-  width: 90%;
-  max-width: 800px; /* Adjusted max-width for better fitting */
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-/* Navbar styles */
 .navbar {
-  background: #007bff;
-  color: #fff;
-  padding: 1rem 0;
+    background-color: lightgrey;
+    color: #fff;
+    padding: 10px 0;
 }
 
 .navbar .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .navbar .logo {
-  font-size: 1.5rem;
-  font-weight: bold;
+    font-size: 24px;
+    font-weight: bold;
+    color: rgb(126, 33, 126);
+    font-family: "Playwrite HR Lijeva", cursive;
 }
 
 .navbar nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
 .navbar nav ul li {
-  margin-left: 1rem;
+    margin-left: 20px;
 }
 
 .navbar nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 1rem;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
 }
 
 .navbar nav ul li a:hover {
-  text-decoration: underline;
+    background-color: #575757;
 }
 
-/* Main content styles */
-main {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  position: relative;
+.container {
+    width: 80%;
+    margin: 0 auto;
 }
 
-.intro {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 1s ease-in-out;
-  max-width: 100%;
-}
-
-.intro h1 {
-  margin-top: 0;
-  font-size: 2.5rem;
-  color: #333;
+.intro{
+    text-align: center;
+    padding: 50px;
+    padding-top: 100px;
+    height: 50vh;
+    width: 25vw;
+    font-size: 20px;
+    display:inline-block;
+    position: relative;
+    left: 800px;
+    bottom: 900px;
 }
 
 .intro p {
-  font-size: 1.2rem;
-  color: #555;
+    font-size: 30px;
+    color: #666;
 }
 
-.intro .links {
-  margin-top: 1rem;
+.links {
+    margin-top: 20px;
 }
 
-.intro .btn {
-  display: inline-block;
-  margin: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: #fff;
-  background: #007bff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease;
+.links .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-.intro .btn:hover {
-  background: #0056b3;
+.links .btn:hover {
+    background-color: #575757;
 }
 
-/* Footer styles */
 .footer {
-  background: #333;
-  color: #fff;
-  padding: 1rem 0;
-  text-align: center;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+.logo {
+    color: rgb(126, 33, 126);
+    font-family: "Playwrite HR Lijeva", cursive;
+    font-weight:800;
+}
+span{
+    font-size: 30px;
+    color:  rgb(126, 33, 126);
 }
 
-.footer p {
-  margin: 0;
+.box2 {
+    width: 35vw;
+    height: 55vh;
+    display: inline-block;
+    margin: 0px;
+    position: relative;
+    top: 30px;
+    left: 120px;
+    text-align: center;
+    font-size: 30px;
 }
-
-/* Creative line styles */
-body::before,
-body::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: 100%;
-  height: 100%;
-  background: url('/images/lines.svg') no-repeat center center;
-  background-size: contain;
-  opacity: 0.1;
-  z-index: -1;
-  transform: translateX(-50%);
+.card1{
+    border: 1px solid #4f1b41;
+    background-color: #4f1b41;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
 }
-
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-  }
-  to {
-      opacity: 1;
-  }
+.card2{
+    border: 1px solid #692457;
+    background-color: #692457;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card3{
+    border: 1px solid #842e6d;
+    background-color: #842e6d;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card4{
+    border: 1px solid #9e3783;
+    background-color: #9e3783;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card5{
+    border: 1px solid #b94099;
+    background-color: #b94099;
+    color: white;
+    width: 300px;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+.card6{
+    border: 1px solid #c558a8;
+    background-color: #c558a8;
+    color: white;
+    width: 300px;
+    text-align: center;
+    padding:6px;
+    margin:10px;
+    border-radius:5px;
+}
+img{
+    position: relative;
+    left: 500px;
+    bottom: 399px;
+}
+.modal-content {
+  border-radius: 10px;
+  border: none;
+}
+.modal-header {
+  border-bottom: none;
+}
+.modal-footer {
+  border-top: none;
+}
+.btn-primary {
+  background-color: #4285F4;
+  border-color: #4285F4;
 }

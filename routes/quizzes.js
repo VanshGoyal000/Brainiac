@@ -2,7 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Quiz = require('../models/quiz.model');
 const isLoggedIn = require('../middlewares/isLoggedIn');
-const crypto = require('crypto')
+const crypto = require('crypto');
+const userModel = require('../models/user.model');
+
+
+//brainco
+router.get('/brainco' , isLoggedIn , (req , res)=>{
+    res.render('brainco');
+})
 
 // Create a quiz
 router.get('/create',isLoggedIn ,  (req, res) => {
@@ -23,16 +30,31 @@ router.get('/create',isLoggedIn ,  (req, res) => {
 
 router.post('/create', isLoggedIn, async (req, res) => {
     try {
-        const { title, questions } = req.body;
+        const { title, questions, timeLimit } = req.body;
+        console.log('Received form data:', req.body); // Debug statement
+
         const code = crypto.randomBytes(3).toString('hex');
-        const quiz = new Quiz({ title, questions, code, creator: req.user._id });
+        const quiz = new Quiz({
+            title,
+            questions: questions.map(q => ({
+                text: q.text,
+                options: q.options,
+                correctAnswer: q.correctAnswer
+            })),
+            code,
+            creator: req.user._id,
+            timeLimit
+        });
+
         await quiz.save();
+        console.log('Quiz created successfully:', quiz); // Debug statement
         res.redirect(`/quizzes/sharehere?code=${code}&id=${quiz._id}`);
     } catch (error) {
         console.error('Error creating quiz:', error);
         res.render('createQuiz', { error: 'An error occurred while creating the quiz.' });
     }
 });
+
 
 // after creating quiz
 router.get('/sharehere', async (req, res) => {

@@ -39,7 +39,7 @@ router.get('/login', (req, res) => {
 
 // Handle login form submission
 router.post('/login', passport.authenticate('local', {
-  successRedirect: '/quizzes/create',
+  successRedirect: '/quizzes/brainco',
   failureRedirect: '/users/login',
   failureFlash: true
 }));

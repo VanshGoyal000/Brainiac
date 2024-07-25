@@ -16,6 +16,7 @@ const quizSchema = new mongoose.Schema({
     questions: { type: [questionSchema], required: true },
     code:{type:String , required :true },
     creator: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
+    timeLimit : Number,
     scores: { type: [scoreSchema], default: [] }
 });
 

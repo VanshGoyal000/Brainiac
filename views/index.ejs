@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link rel="stylesheet" href="home.css">
+    <!-- Include Bootstrap CSS for easy styling (optional) -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
     <header class="navbar">
@@ -18,10 +23,23 @@
         </div>
     </header>
 
+    <div class="box2">
+        <div class="card1">Engaging Quizzes</div>
+        <div class="card2">User Generated Content</div>
+        <div class="card3">Real Time Results</div>
+        <div class="card4">Leaderboard and Achievements</div>
+        <div class="card5">Customizable Content</div>
+        <div class="card6">Social Sharing</div>
+    </div>
+
+    <div class="image">
+        <img src="brain.png" width="500" height="500" alt="Brainiac">
+    </div>
+
     <main class="container">
         <section class="intro">
-            <h1><%= title %></h1>
-            <p>Welcome to Brainiac</p>
+            <span>Join the thousands testing their knowledge with our quizzes for free!</span>
+            <br><br>
             <div class="links">
                 <a href="/users/signup" class="btn">Signup</a>
                 <a href="/users/login" class="btn">Login</a>
@@ -34,5 +52,30 @@
             <p>&copy; 2024 Brainiac. All rights reserved.</p>
         </div>
     </footer>
+
+    <!-- Modal for Google Sign-In -->
+    <div class="modal fade" id="signinModal" tabindex="-1" aria-labelledby="signinModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signinModalLabel">Sign In</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Sign in with Google to continue.</p>
+                    <a href="/auth/google" class="btn btn-primary">Sign in with Google</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include jQuery and Bootstrap JS for modal functionality (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#signinModal').modal('show');
+        });
+    </script>
 </body>
 </html>

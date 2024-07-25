@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Quiz</title>
     <link rel="stylesheet" href="/stylesheets/createQuiz.css">
     <script>
         function addQuestion() {
             const questionDiv = document.createElement('div');
-            questionDiv.className = 'question';
             questionDiv.innerHTML = `
                 <label>Question:</label>
                 <input type="text" name="questions[][text]" required>
-                <div class="options">
+                <div>
                     <label>Option 1:</label>
                     <input type="text" name="questions[][options][]" required>
                     <label>Option 2:</label>
@@ -36,42 +33,38 @@
     </script>
 </head>
 <body>
-    <div class="container">
-        <h1>Create Quiz</h1>
-        <form action="/quizzes/create" method="POST">
-            <div class="form-group">
-                <label for="title">Quiz Title:</label>
-                <input type="text" name="title" required>
-            </div>
-            <div id="questions">
-                <div class="question">
-                    <label>Question:</label>
-                    <input type="text" name="questions[][text]" required>
-                    <div class="options">
-                        <label>Option 1:</label>
-                        <input type="text" name="questions[][options][]" required>
-                        <label>Option 2:</label>
-                        <input type="text" name="questions[][options][]" required>
-                        <label>Option 3:</label>
-                        <input type="text" name="questions[][options][]" required>
-                        <label>Option 4:</label>
-                        <input type="text" name="questions[][options][]" required>
-                    </div>
-                    <label>Correct Option:</label>
-                    <select name="questions[][correctAnswer]">
-                        <option value="0">Option 1</option>
-                        <option value="1">Option 2</option>
-                        <option value="2">Option 3</option>
-                        <option value="3">Option 4</option>
-                    </select>
-                    <hr>
+    <h1>Create Quiz</h1>
+    <form action="/quizzes/create" method="POST">
+        <label for="title">Quiz Title:</label>
+        <input type="text" name="title" required>
+        <label for="timeLimit">Time Limit (in minutes):</label>
+        <input type="number" name="timeLimit" required>
+        <div id="questions">
+            <div>
+                <label>Question:</label>
+                <input type="text" name="questions[][text]" required>
+                <div>
+                    <label>Option 1:</label>
+                    <input type="text" name="questions[][options][]" required>
+                    <label>Option 2:</label>
+                    <input type="text" name="questions[][options][]" required>
+                    <label>Option 3:</label>
+                    <input type="text" name="questions[][options][]" required>
+                    <label>Option 4:</label>
+                    <input type="text" name="questions[][options][]" required>
                 </div>
+                <label>Correct Option:</label>
+                <select name="questions[][correctAnswer]">
+                    <option value="0">Option 1</option>
+                    <option value="1">Option 2</option>
+                    <option value="2">Option 3</option>
+                    <option value="3">Option 4</option>
+                </select>
+                <hr>
             </div>
-            <div class="buttons">
-                <button type="button" onclick="addQuestion()">Add Question</button>
-                <button type="submit">Create Quiz</button>
-            </div>
-        </form>
-    </div>
+        </div>
+        <button type="button" onclick="addQuestion()">Add Question</button>
+        <button type="submit">Create Quiz</button>
+    </form>
 </body>
 </html>

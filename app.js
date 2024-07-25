@@ -13,7 +13,8 @@ require('./db/connect')();
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-const quizzesRouter = require('./routes/quizzes.js')
+const quizzesRouter = require('./routes/quizzes.js');
+const authRouter = require('./routes/auth'); // Add this line
 
 const app = express();
 
@@ -40,8 +41,7 @@ app.use(session({
 // Passport.js setup
 app.use(passport.initialize());
 app.use(passport.session());
-require('./config/passport.js').passport;
-
+require('./config/passport');
 
 // Flash messages
 app.use(flash());
@@ -50,6 +50,7 @@ app.use(flash());
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/quizzes', quizzesRouter);
+app.use('/auth', authRouter); // Add this line
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
