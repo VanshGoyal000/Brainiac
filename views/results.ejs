@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - <%= quiz.title %></title>
+    <link rel="stylesheet" href="/stylesheets/results.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Results for <%= quiz.title %></h1>
+        <ul>
+            <% quiz.scores.forEach(score => { %>
+                <li><%= score.user.name %>: <%= score.score %></li>
+            <% }) %>
+        </ul>
+        <button onclick="downloadReport()">Download Report</button>
+    </div>
+    <script>
+        function downloadReport() {
+            // Logic to download report
+            const data = JSON.stringify(<%= JSON.stringify(quiz.scores) %>);
+            const blob = new Blob([data], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'quiz_report.json';
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

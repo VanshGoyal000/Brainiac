@@ -10,10 +10,9 @@
 <body>
     <div class="container">
         <h1>Join Quiz</h1>
-        <!-- edit later -->
-        <!-- <% if (typeof error !== 'undefined') { %> -->
-            <!-- <p class="error"><%= error %></p> -->
-        <!-- <% } %> -->
+        <% if (typeof error !== 'undefined') { %>
+            <p class="error"><%= error %></p>
+        <% } %>
         <form action="/quizzes/join" method="POST">
             <div class="form-group">
                 <label for="code">Quiz Code:</label>

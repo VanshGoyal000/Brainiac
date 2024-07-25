@@ -2,25 +2,26 @@
 <html>
 <head>
     <title>Create Quiz</title>
-    <link rel="stylesheet" href="/stylesheets/createQuiz.css">
     <script>
+        let questionIndex = 0;
         function addQuestion() {
             const questionDiv = document.createElement('div');
+            questionDiv.classList.add('question-block');
             questionDiv.innerHTML = `
                 <label>Question:</label>
-                <input type="text" name="questions[][text]" required>
+                <input type="text" name="questions[<%= questionIndex %>][text]" required>
                 <div>
                     <label>Option 1:</label>
-                    <input type="text" name="questions[][options][]" required>
+                    <input type="text" name="questions[<%= questionIndex %>][options][]" required>
                     <label>Option 2:</label>
-                    <input type="text" name="questions[][options][]" required>
+                    <input type="text" name="questions[<%= questionIndex %>][options][]" required>
                     <label>Option 3:</label>
-                    <input type="text" name="questions[][options][]" required>
+                    <input type="text" name="questions[<%= questionIndex %>][options][]" required>
                     <label>Option 4:</label>
-                    <input type="text" name="questions[][options][]" required>
+                    <input type="text" name="questions[<%= questionIndex %>][options][]" required>
                 </div>
                 <label>Correct Option:</label>
-                <select name="questions[][correctAnswer]">
+                <select name="questions[<%= questionIndex %>][correctAnswer]">
                     <option value="0">Option 1</option>
                     <option value="1">Option 2</option>
                     <option value="2">Option 3</option>
@@ -29,42 +30,45 @@
                 <hr>
             `;
             document.getElementById('questions').appendChild(questionDiv);
+            questionIndex++;
         }
+
     </script>
+    <link rel="stylesheet" href="/stylesheets/createQuiz.css">
 </head>
 <body>
-    <h1>Create Quiz</h1>
-    <form action="/quizzes/create" method="POST">
-        <label for="title">Quiz Title:</label>
-        <input type="text" name="title" required>
-        <label for="timeLimit">Time Limit (in minutes):</label>
-        <input type="number" name="timeLimit" required>
-        <div id="questions">
-            <div>
-                <label>Question:</label>
-                <input type="text" name="questions[][text]" required>
-                <div>
-                    <label>Option 1:</label>
-                    <input type="text" name="questions[][options][]" required>
-                    <label>Option 2:</label>
-                    <input type="text" name="questions[][options][]" required>
-                    <label>Option 3:</label>
-                    <input type="text" name="questions[][options][]" required>
-                    <label>Option 4:</label>
-                    <input type="text" name="questions[][options][]" required>
+    <div class="title">
+        <h1>Create Quiz</h1>
+        <form action="/quizzes/create" method="POST">
+            <label for="title">Quiz Title:</label>
+            <input type="text" name="title" required>
+            <div id="questions">
+                <div class="question-block">
+                    <label>Question:</label>
+                    <input type="text" name="questions[0][text]" required>
+                    <div>
+                        <label>Option 1:</label>
+                        <input type="text" name="questions[0][options][]" required>
+                        <label>Option 2:</label>
+                        <input type="text" name="questions[0][options][]" required>
+                        <label>Option 3:</label>
+                        <input type="text" name="questions[0][options][]" required>
+                        <label>Option 4:</label>
+                        <input type="text" name="questions[0][options][]" required>
+                    </div>
+                    <label>Correct Option:</label>
+                    <select name="questions[0][correctAnswer]">
+                        <option value="0">Option 1</option>
+                        <option value="1">Option 2</option>
+                        <option value="2">Option 3</option>
+                        <option value="3">Option 4</option>
+                    </select>
+                    <hr>
                 </div>
-                <label>Correct Option:</label>
-                <select name="questions[][correctAnswer]">
-                    <option value="0">Option 1</option>
-                    <option value="1">Option 2</option>
-                    <option value="2">Option 3</option>
-                    <option value="3">Option 4</option>
-                </select>
-                <hr>
             </div>
-        </div>
-        <button type="button" onclick="addQuestion()">Add Question</button>
-        <button type="submit">Create Quiz</button>
-    </form>
+            <button type="button" onclick="addQuestion()">Add Question</button>
+            <button type="submit">Create Quiz</button>
+        </form>
+    </div>
 </body>
 </html>

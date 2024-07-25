@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+AR:wght@100..400&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+
 body {
+    font-family: "Kanit", sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,85 +13,58 @@ body {
 }
 
 .container {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    animation: fadeIn 1s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
 }
 
 .card {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 1.5rem;
-    border-radius: 10px;
-    background-color: #fafafa;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    animation: slideIn 1s ease-in-out;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
 }
 
 h1 {
-    color: #333;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-h2.code {
-    color: #ff6347;
-    font-size: 1.5rem;
-    margin: 1rem 0;
-    background: #ffe4e1;
-    padding: 0.5rem;
-    border-radius: 5px;
+    
+    color: rgb(126, 33, 126);
+    font-family: "Playwrite HR Lijeva", cursive;
+    margin-bottom: 20px;
+    font-weight: 800;
 }
 
 h3 {
-    color: #555;
-    font-size: 1.2rem;
-    margin: 1rem 0;
+    color: rgb(116, 109, 109);
+    margin-bottom: 10px;
+    font-weight: 300;
+    font-family: "Kanit", sans-serif;
 }
 
 a {
-    display: inline-block;
-    margin: 0.5rem 0;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    color: #fff;
-    background: #007bff;
-    border-radius: 5px;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
     text-decoration: none;
-    transition: background 0.3s ease;
+    color: #fff;
+    border-radius: 4px;
 }
 
-a:hover {
-    background: #0056b3;
+.link {
+    background-color:rgb(126, 33, 126);
+}
+
+.join-link {
+    background-color:rgb(126, 33, 126);
 }
 
 .create-link {
-    background: #28a745;
+    background-color: rgb(126, 33, 126);
 }
 
-.create-link:hover {
-    background: #218838;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-@keyframes slideIn {
-    from {
-        transform: translateY(-20px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+a:hover {
+    opacity: 0.8;
 }

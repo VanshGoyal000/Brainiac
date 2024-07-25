@@ -31,23 +31,23 @@ router.get('/create',isLoggedIn ,  (req, res) => {
 router.post('/create', isLoggedIn, async (req, res) => {
     try {
         const { title, questions, timeLimit } = req.body;
-        console.log('Received form data:', req.body); // Debug statement
-
         const code = crypto.randomBytes(3).toString('hex');
+
+        const formattedQuestions = questions.map(q => ({
+            text: q.text,
+            options: q.options,
+            correctAnswer: parseInt(q.correctAnswer)
+        }));
+
         const quiz = new Quiz({
             title,
-            questions: questions.map(q => ({
-                text: q.text,
-                options: q.options,
-                correctAnswer: q.correctAnswer
-            })),
+            questions: formattedQuestions,
             code,
             creator: req.user._id,
             timeLimit
         });
 
         await quiz.save();
-        console.log('Quiz created successfully:', quiz); // Debug statement
         res.redirect(`/quizzes/sharehere?code=${code}&id=${quiz._id}`);
     } catch (error) {
         console.error('Error creating quiz:', error);
@@ -121,5 +121,56 @@ router.get('/:id/leaderboard', async (req, res) => {
     const quiz = await Quiz.findById(req.params.id).populate('scores.user');
     res.render('leaderboard', { quiz });
 });
+
+router.get('/reports', isLoggedIn, async (req, res) => {
+    try {
+        const quizzes = await Quiz.find({ creator: req.user._id });
+        res.render('reports', { quizzes });
+    } catch (error) {
+        console.error('Error fetching reports:', error);
+        res.status(500).render('join_quiz', { error: 'An error occurred' });
+    }
+});
+
+
+//results 
+router.get('/:id/results', isLoggedIn, async (req, res) => {
+    try {
+        const quiz = await Quiz.findById(req.params.id).populate('scores.user');
+        if (!quiz) {
+            return res.status(404).render('join_quiz', { error: 'Quiz not found' });
+        }
+        res.render('results', { quiz });
+    } catch (error) {
+        console.error('Error fetching results:', error);
+        res.status(500).render('join_quiz', { error: 'An error occurred' });
+    }
+});
+
+
+// Download previous quizzes report
+router.get('/download', isLoggedIn, async (req, res) => {
+    try {
+        const quizzes = await Quiz.find({ creator: req.user._id });
+        const report = quizzes.map(quiz => ({
+            title: quiz.title,
+            code: quiz.code,
+            scores: quiz.scores.map(score => ({
+                user: score.user.username,
+                score: score.score
+            }))
+        }));
+
+        const reportPath = path.join(__dirname, '..', 'reports', `report_${req.user._id}.json`);
+        fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+
+        res.download(reportPath);
+    } catch (error) {
+        console.error('Error generating report:', error);
+        res.status(500).send('An error occurred while generating the report.');
+    }
+});
+
+
 
 module.exports = router;

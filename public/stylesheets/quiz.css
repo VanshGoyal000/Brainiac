@@ -1,53 +1,56 @@
-/* General Styles */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playwrite+AR:wght@100..400&family=Playwrite+HR+Lijeva:wght@100..400&display=swap');
+
+
 body {
+    font-family: "Kanit", sans-serif;
+    background-color: #f4f4f4;
     margin: 0;
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to right, #83a4d4, #b6fbff);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
+    padding: 0;
 }
 
 .container {
-    background: #fff;
-    padding: 20px 40px;
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
-    width: 100%;
-    animation: fadeIn 1s ease-in-out;
-    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    top: 50px;
 }
 
 h1 {
-    margin-bottom: 20px;
-    color: #333;
-    font-size: 2em;
+    color: rgb(126, 33, 126);
+    font-family: "Playwrite HR Lijeva", cursive;
+    font-optical-sizing: auto;
+    font-weight: 900;
+    font-style: normal;
+    font-size: 50px;
+    text-align: center;
+}
+
+form {
+    margin-top: 20px;
 }
 
 .question {
     margin-bottom: 20px;
-    text-align: left;
 }
 
 .question-text {
-    font-weight: bold;
+    font-size: 1.2em;
     margin-bottom: 10px;
-    color: #555;
 }
 
 .options {
-    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
 }
 
 .option {
-    display: block;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
-input[type="radio"] {
+.option input {
     margin-right: 10px;
 }
 
@@ -57,27 +60,16 @@ input[type="radio"] {
 }
 
 button {
-    background: #83a4d4;
-    border: none;
+    background-color: rgb(126, 33, 126);
+    color: white;
     padding: 10px 20px;
+    border: none;
     border-radius: 5px;
-    color: #fff;
     cursor: pointer;
-    transition: background 0.3s ease;
     font-size: 1em;
+    font-family: "Kanit", sans-serif;
 }
 
 button:hover {
-    background: #6699cc;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    background-color: blueviolet
 }
