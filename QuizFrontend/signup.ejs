@@ -8,15 +8,14 @@
 <body>
     <div class="container">
         <h1>Signup</h1>
-        <!-- need to edit later -->
-        <!-- <% if (errors.length > 0) { %> -->
-            <!-- <ul> -->
-                <!-- <% errors.forEach(function(error) { %> -->
-                    <!-- <li class="error"><%= error.msg %></li> -->
-                <!-- <% }) %> -->
-            <!-- </ul> -->
-        <!-- <% } %> -->
-        <!-- */ -->
+        <% if (errors.length > 0) { %>
+            <ul>
+                <% errors.forEach(function(error) { %>
+                    <li class="error"><%= error.msg %></li>
+                <% }) %>
+            </ul>
+        <% } %>
+   
         <form action="/users/signup" method="POST">
             <div class="form-group">
                 <label for="username">Username:</label>

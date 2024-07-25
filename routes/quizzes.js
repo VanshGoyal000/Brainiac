@@ -97,23 +97,22 @@ router.get('/:id',isLoggedIn ,async (req, res) => {
 });
 
 // Submit a quiz
-router.post('/:id/submit', async (req, res) => {
-    const { answers } = req.body;
+router.post('/quizzes/:id/submit', async (req, res) => {
     const quiz = await Quiz.findById(req.params.id);
+    const userAnswers = req.body.answers;
     let score = 0;
 
-    // Calculate score
     quiz.questions.forEach((question, index) => {
-        if (question.correctAnswer === answers[index]) {
+        if (question.correctAnswer === userAnswers[index]) {
             score++;
         }
     });
 
-    // Save score
+    // Save the score to the database
     quiz.scores.push({ user: req.user._id, score });
     await quiz.save();
 
-    res.redirect(`/quizzes/${quiz._id}/leaderboard`);
+    res.redirect(`/quizzes/${quiz._id}/result`);
 });
 
 // Leaderboard
