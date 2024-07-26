@@ -97,7 +97,7 @@ router.get('/:id',isLoggedIn ,async (req, res) => {
 });
 
 // Submit a quiz
-router.post('/quizzes/:id/submit', async (req, res) => {
+router.post('/:id/submit', async (req, res) => {
     const quiz = await Quiz.findById(req.params.id);
     const userAnswers = req.body.answers;
     let score = 0;
