@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user.model'); // Ensure this path is correct
+const User = require('../models/user.model.js'); // Ensure this path is correct
 const passport = require('passport');
 const { check, validationResult } = require('express-validator');
 

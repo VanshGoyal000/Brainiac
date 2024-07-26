@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const passportLocalMongoose = require('passport-local-mongoose');
+
 
 const UserSchema = new mongoose.Schema({
     username: {
@@ -36,5 +38,8 @@ UserSchema.pre('save', async function (next) {
 UserSchema.methods.comparePassword = function (candidatePassword) {
     return bcrypt.compare(candidatePassword, this.password);
 };
+UserSchema.plugin(passportLocalMongoose, { usernameField: 'email' });
+
+
 
 module.exports = mongoose.model('User', UserSchema);

@@ -124,7 +124,7 @@ router.get('/:id/leaderboard', async (req, res) => {
 router.get('/reports', isLoggedIn, async (req, res) => {
     try {
         const quizzes = await Quiz.find({ creator: req.user._id });
-        res.render('reports', { quizzes });
+        res.render('report', { quizzes });
     } catch (error) {
         console.error('Error fetching reports:', error);
         res.status(500).render('join_quiz', { error: 'An error occurred' });
