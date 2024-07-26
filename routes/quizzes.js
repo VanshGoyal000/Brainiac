@@ -112,7 +112,7 @@ router.post('/:id/submit', async (req, res) => {
     quiz.scores.push({ user: req.user._id, score });
     await quiz.save();
 
-    res.redirect(`/quizzes/${quiz._id}/result`);
+    res.redirect(`/quizzes/${quiz._id}/results`);
 });
 
 // Leaderboard
